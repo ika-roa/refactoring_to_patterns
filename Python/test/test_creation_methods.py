@@ -27,15 +27,18 @@ class TestTeacherWithConstructorOverloading:
         assert teacher.category == "junior"
 
     def test_that_class_is_initialized_correctly_with_custom_constructor(self):
-        teacher = Teacher(teacher_id=2, name="John", has_car=True, category="senior")
+        teacher = self.create_senior_teacher(teacher_id=2, name="John", has_car=True)
         assert teacher.id == 2
         assert teacher.name == "John"
         assert teacher.has_car is True
         assert teacher.category == "senior"
 
     def test_that_class_is_initialized_correctly_with_mixed_constructor(self):
-        teacher = Teacher(teacher_id=3, name="Mary", category="senior")
+        teacher = self.create_senior_teacher(teacher_id=3, name="Mary")
         assert teacher.id == 3
         assert teacher.name == "Mary"
         assert teacher.has_car is False
         assert teacher.category == "senior"
+
+    def create_senior_teacher(self, teacher_id: int, name: str, has_car: bool = False):
+        return Teacher(teacher_id, name, has_car, category="senior")
