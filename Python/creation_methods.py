@@ -12,3 +12,11 @@ class Student:
     def from_list(cls, information_list: list):
         student_id, name = information_list
         return cls(student_id, name)
+
+
+class Teacher:
+    def __init__(self, teacher_id: int, name: str, has_car: bool = False, category: str = "junior"):
+        self.id = teacher_id
+        self.name = name
+        self.has_car = has_car
+        self.category = category

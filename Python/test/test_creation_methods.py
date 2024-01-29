@@ -1,4 +1,4 @@
-from Python.creation_methods import Student
+from Python.creation_methods import Student, Teacher
 
 
 class TestStudentWithDifferentTypeConstructors:
@@ -16,3 +16,12 @@ class TestStudentWithDifferentTypeConstructors:
         student = Student.from_list([1, "Bob"])
         assert student.id == 1
         assert student.first_name == "Bob"
+
+
+class TestTeacherWithConstructorOverloading:
+    def test_that_class_is_initialized_correctly_with_default_constructor(self):
+        teacher = Teacher(1, "Bob")
+        assert teacher.id == 1
+        assert teacher.name == "Bob"
+        assert teacher.has_car == False
+        assert teacher.category == "junior"
