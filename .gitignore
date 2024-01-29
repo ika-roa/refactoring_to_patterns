@@ -1,2 +1,9 @@
 .idea/*
-.venv/*
+
+# Python
+Python/.venv/*
+
+# C#
+CSharp/CreationMethods/bin
+CSharp/CreationMethods/obj
+CSharp/.idea/*
