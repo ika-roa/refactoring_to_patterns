@@ -1,6 +1,10 @@
 ﻿namespace CreationMethods;
 
-public class Program
+internal static class Program
 {
-    
+    private static void Main()
+    {
+        Teacher teacher = new Teacher(1, "John", true, "junior");
+        Console.Write($"Hello {teacher.Name}!");
+    }
 }
