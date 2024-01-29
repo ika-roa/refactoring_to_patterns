@@ -32,3 +32,10 @@ class TestTeacherWithConstructorOverloading:
         assert teacher.name == "John"
         assert teacher.has_car is True
         assert teacher.category == "senior"
+
+    def test_that_class_is_initialized_correctly_with_mixed_constructor(self):
+        teacher = Teacher(teacher_id=3, name="Mary", category="senior")
+        assert teacher.id == 3
+        assert teacher.name == "Mary"
+        assert teacher.has_car is False
+        assert teacher.category == "senior"
