@@ -5,8 +5,8 @@ class Student:
 
     @classmethod
     def from_string(cls, information_string):
-        name_parts = information_string.split(", ")
-        return cls(name_parts[0], name_parts[1])
+        student_id, name = information_string.split(", ")
+        return cls(student_id, name)
 
     def print_information(self):
         print(f"The student {self.first_name} has id {self.id}.")
