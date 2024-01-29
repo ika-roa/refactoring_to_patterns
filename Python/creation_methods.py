@@ -20,3 +20,7 @@ class Teacher:
         self.name = name
         self.has_car = has_car
         self.category = category
+
+    @classmethod
+    def create_senior_teacher(cls, teacher_id: int, name: str, has_car: bool = False):
+        return cls(teacher_id, name, has_car, category="senior")
