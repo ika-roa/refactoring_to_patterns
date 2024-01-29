@@ -1,7 +1,7 @@
 from Python.creation_methods import Student
 
 
-class TestCreationMethods:
+class TestStudentWithDifferentTypeConstructors:
     def test_that_class_is_initialized_correctly_with_standard_constructor(self):
         student = Student(1, "Bob")
         assert student.id == 1
