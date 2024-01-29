@@ -8,6 +8,11 @@ class Student:
         student_id, name = information_string.split(", ")
         return cls(student_id, name)
 
+    @classmethod
+    def from_list(cls, information_list):
+        student_id, name = information_list
+        return cls(student_id, name)
+
     def print_information(self):
         print(f"The student {self.first_name} has id {self.id}.")
 
@@ -17,6 +22,9 @@ if __name__ == "__main__":
     student_1 = Student(1, "John")
     student_1.print_information()
 
-    # example 2: Class called via alternate constructor
+    # example 2: Classes called via alternate constructors
     student_2 = Student.from_string("2, Bob")
     student_2.print_information()
+
+    student_3 = Student.from_list([3, "Judy"])
+    student_3.print_information()
