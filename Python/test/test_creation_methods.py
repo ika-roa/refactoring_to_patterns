@@ -23,12 +23,12 @@ class TestTeacherWithConstructorOverloading:
         teacher = Teacher(1, "Bob")
         assert teacher.id == 1
         assert teacher.name == "Bob"
-        assert teacher.has_car == False
+        assert teacher.has_car is False
         assert teacher.category == "junior"
 
     def test_that_class_is_initialized_correctly_with_custom_constructor(self):
         teacher = Teacher(teacher_id=2, name="John", has_car=True, category="senior")
         assert teacher.id == 2
         assert teacher.name == "John"
-        assert teacher.has_car == True
+        assert teacher.has_car is True
         assert teacher.category == "senior"
