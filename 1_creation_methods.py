@@ -18,11 +18,11 @@ class Student:
 
 
 if __name__ == "__main__":
-    # example 1: Class called via normal constructor
+    # Class called via normal constructor
     student_1 = Student(1, "John")
     student_1.print_information()
 
-    # example 2: Classes called via alternate constructors
+    # Classes called via alternate constructors
     student_2 = Student.from_string("2, Bob")
     student_2.print_information()
 
