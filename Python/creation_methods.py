@@ -24,3 +24,7 @@ class Teacher:
     @classmethod
     def create_senior_teacher(cls, teacher_id: int, name: str, has_car: bool = False):
         return cls(teacher_id, name, has_car, category="senior")
+
+    @classmethod
+    def create_teacher_with_car(cls, teacher_id, name, category):
+        return cls(teacher_id=teacher_id, name=name, has_car=True, category=category)
