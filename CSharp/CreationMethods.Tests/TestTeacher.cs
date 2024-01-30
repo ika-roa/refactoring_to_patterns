@@ -18,7 +18,7 @@ public class Tests
     [Test]
     public void TestConstructorForSeniorTeacher()
     {
-        var teacher = CreateSeniorTeacher(1, "Bob", true);
+        var teacher = Teacher.CreateSeniorTeacher(1, "Bob", true);
         Assert.Multiple(() =>
         {
             Assert.That(teacher.Id, Is.EqualTo(1));
@@ -26,11 +26,6 @@ public class Tests
             Assert.That(teacher.HasCar, Is.EqualTo(true));
             Assert.That(teacher.Category, Is.EqualTo("senior"));
         });
-    }
-
-    private static Teacher CreateSeniorTeacher(int id, string name, bool hasCar)
-    {
-        return new Teacher(id, name, hasCar);
     }
 
     [Test]

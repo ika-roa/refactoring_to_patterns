@@ -30,4 +30,9 @@ public class Teacher
         HasCar = true;
         Category = category;
     }
+
+    public static Teacher CreateSeniorTeacher(int id, string name, bool hasCar)
+    {
+        return new Teacher(id, name, hasCar);
+    }
 }
