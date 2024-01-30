@@ -15,8 +15,6 @@ public class Teacher
         Category = category;
     }
 
-    public Teacher(int id, string name, string category) : this(id, name, true, category){}
-    
     public static Teacher CreateSeniorTeacher(int id, string name, bool hasCar)
     {
         return new Teacher(id, name, hasCar, "senior");
@@ -24,6 +22,6 @@ public class Teacher
 
     public static Teacher CreateTeacherWithCar(int id, string name, string category)
     {
-        return new Teacher(id, name, category);
+        return new Teacher(id, name, true, category);
     }
 }
