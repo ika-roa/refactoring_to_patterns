@@ -15,13 +15,7 @@ public class Teacher
         Category = category;
     }
     
-    public Teacher(int id, string name, bool hasCar)
-    {
-        Id = id;
-        Name = name;
-        HasCar = hasCar;
-        Category = "senior";
-    }
+    public Teacher(int id, string name, bool hasCar) : this(id, name, hasCar, "senior") {}
     
     public Teacher(int id, string name, string category)
     {
