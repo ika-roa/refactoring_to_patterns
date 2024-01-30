@@ -31,7 +31,7 @@ public class Tests
     [Test]
     public void TestConstructorForTeacherWithCar()
     {
-        var teacher = CreateTeacherWithCarTeacher(1, "Bob", "senior");
+        var teacher = Teacher.CreateTeacherWithCar(1, "Bob", "senior");
         Assert.Multiple(() =>
         {
             Assert.That(teacher.Id, Is.EqualTo(1));
@@ -39,10 +39,5 @@ public class Tests
             Assert.That(teacher.HasCar, Is.EqualTo(true));
             Assert.That(teacher.Category, Is.EqualTo("senior"));
         });
-    }
-
-    private static Teacher CreateTeacherWithCarTeacher(int id, string name, string category)
-    {
-        return new Teacher(id, name, category);
     }
 }

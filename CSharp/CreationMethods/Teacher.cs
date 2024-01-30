@@ -21,4 +21,9 @@ public class Teacher
     {
         return new Teacher(id, name, hasCar, "senior");
     }
+
+    public static Teacher CreateTeacherWithCar(int id, string name, string category)
+    {
+        return new Teacher(id, name, category);
+    }
 }
