@@ -15,13 +15,23 @@ class FrenchTranslator:
         return self.translations.get(message)
 
 
-def app(message: str):
-    my_translator = FrenchTranslator()
+class SpanishTranslator:
+    def __init__(self):
+        self.translations = {"car": "coche"}
+
+    def translate(self, message) -> str:
+        return self.translations.get(message)
+
+
+def app(message: str, language: str) -> str:
+    my_translator = None
+
+    if language == "french":
+        my_translator = FrenchTranslator()
+    elif language == "spanish":
+        my_translator = SpanishTranslator()
+
     print(f"App: Launched with {type(my_translator).__name__}")
 
     app_module = AppModule(my_translator)
     return app_module.pretty_print_output(message)
-
-
-if __name__ == "__main__":
-    app("car")
