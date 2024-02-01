@@ -24,6 +24,18 @@ class PortugueseTranslator(Translator):
         self.translations = {"car": "carro"}
 
 
+class TranslatorFactory:
+    def __init__(self, language):
+        self.language = language
+        self.translators = {"french": FrenchTranslator,
+                            "spanish": SpanishTranslator,
+                            "portuguese": PortugueseTranslator
+                            }
+
+    def create(self):
+        return self.translators[self.language]()
+
+
 class AppModule:
     def __init__(self, translator):
         self.translator = translator
@@ -34,14 +46,7 @@ class AppModule:
 
 
 def app(message: str, language: str) -> str:
-    my_translator = None
-
-    if language == "french":
-        my_translator = FrenchTranslator()
-    elif language == "spanish":
-        my_translator = SpanishTranslator()
-    elif language == "portuguese":
-        my_translator = PortugueseTranslator()
+    my_translator = TranslatorFactory(language).create()
 
     print(f"App: Launched with {type(my_translator).__name__}")
 
