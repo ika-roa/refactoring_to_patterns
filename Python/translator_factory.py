@@ -6,6 +6,14 @@ class Translator:
         return self.translations.get(message)
 
 
+class EnglishTranslator(Translator):
+    def __init__(self):
+        super().__init__()
+
+    def translate(self, message):
+        return message
+
+
 class FrenchTranslator(Translator):
     def __init__(self):
         super().__init__()
@@ -27,7 +35,8 @@ class PortugueseTranslator(Translator):
 class TranslatorFactory:
     def __init__(self, language):
         self.language = language
-        self.translators = {"french": FrenchTranslator,
+        self.translators = {"english": EnglishTranslator,
+                            "french": FrenchTranslator,
                             "spanish": SpanishTranslator,
                             "portuguese": PortugueseTranslator
                             }
