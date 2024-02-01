@@ -7,28 +7,30 @@ class AppModule:
         return f"-*- {result} -*-"
 
 
-class FrenchTranslator:
+class Translator:
     def __init__(self):
+        self.translations = {}
+
+    def translate(self, message):
+        return self.translations.get(message)
+
+
+class FrenchTranslator(Translator):
+    def __init__(self):
+        super().__init__()
         self.translations = {"car": "voiture"}
 
-    def translate(self, message) -> str:
-        return self.translations.get(message)
 
-
-class SpanishTranslator:
+class SpanishTranslator(Translator):
     def __init__(self):
+        super().__init__()
         self.translations = {"car": "coche"}
 
-    def translate(self, message) -> str:
-        return self.translations.get(message)
 
-
-class PortugueseTranslator:
+class PortugueseTranslator(Translator):
     def __init__(self):
+        super().__init__()
         self.translations = {"car": "carro"}
-
-    def translate(self, message) -> str:
-        return self.translations.get(message)
 
 
 def app(message: str, language: str) -> str:
