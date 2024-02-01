@@ -1,12 +1,3 @@
-class AppModule:
-    def __init__(self, translator):
-        self.translator = translator
-
-    def pretty_print_output(self, message):
-        result = self.translator.translate(message)
-        return f"-*- {result} -*-"
-
-
 class Translator:
     def __init__(self):
         self.translations = {}
@@ -31,6 +22,15 @@ class PortugueseTranslator(Translator):
     def __init__(self):
         super().__init__()
         self.translations = {"car": "carro"}
+
+
+class AppModule:
+    def __init__(self, translator):
+        self.translator = translator
+
+    def pretty_print_output(self, message):
+        result = self.translator.translate(message)
+        return f"-*- {result} -*-"
 
 
 def app(message: str, language: str) -> str:
