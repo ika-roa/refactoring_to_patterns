@@ -23,6 +23,14 @@ class SpanishTranslator:
         return self.translations.get(message)
 
 
+class PortugueseTranslator:
+    def __init__(self):
+        self.translations = {"car": "carro"}
+
+    def translate(self, message) -> str:
+        return self.translations.get(message)
+
+
 def app(message: str, language: str) -> str:
     my_translator = None
 
@@ -30,6 +38,8 @@ def app(message: str, language: str) -> str:
         my_translator = FrenchTranslator()
     elif language == "spanish":
         my_translator = SpanishTranslator()
+    elif language == "portuguese":
+        my_translator = PortugueseTranslator()
 
     print(f"App: Launched with {type(my_translator).__name__}")
 
