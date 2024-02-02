@@ -2,10 +2,10 @@
 
 public class TranslatorApp
 {
-    private readonly FrenchTranslator _translator;
+    private readonly Translator _translator;
     private readonly string _message;
 
-    public TranslatorApp(FrenchTranslator translator, string message)
+    public TranslatorApp(Translator translator, string message)
     {
         _translator = translator;
         _message = message;
@@ -23,9 +23,9 @@ public class TranslatorApp
 
 internal class AppModule
 {
-    private readonly FrenchTranslator _translator;
+    private readonly Translator _translator;
 
-    public AppModule(FrenchTranslator translator)
+    public AppModule(Translator translator)
     {
         _translator = translator;
     }
@@ -37,12 +37,19 @@ internal class AppModule
     }
 }
 
-public class FrenchTranslator
+public class Translator
 {
-    private readonly Dictionary<string, string> _translations = new(){{"car", "voiture"}};
+    protected virtual Dictionary<string, string> Translations { get; } = new();
 
     public string Translate(string message)
     {
-        return _translations.GetValueOrDefault(message, "No entry found!");
+        return Translations.GetValueOrDefault(message, "No entry found!");
     }
+}
+
+public class FrenchTranslator : Translator
+{
+    protected override Dictionary<string, string> Translations { get; } = new() { { "car", "voiture" } };
+}
+
 }
