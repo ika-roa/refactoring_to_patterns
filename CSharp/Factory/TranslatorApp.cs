@@ -11,9 +11,17 @@ public class TranslatorApp
         {
             _translator = new FrenchTranslator();
         }
-        else
+        else if (language == "spanish")
         {
             _translator = new SpanishTranslator();
+        }
+        else if (language == "swedish")
+        {
+            _translator = new SwedishTranslator();
+        }
+        else
+        {
+            _translator = new Translator();
         }
         _message = message;
     }
@@ -62,4 +70,9 @@ internal class FrenchTranslator : Translator
 internal class SpanishTranslator : Translator
 {
     protected override Dictionary<string, string> Translations { get; } = new(){{"car", "coche"}};
+}
+
+internal class SwedishTranslator : Translator
+{
+    protected override Dictionary<string, string> Translations { get; } = new(){{"car", "bil"}};
 }
