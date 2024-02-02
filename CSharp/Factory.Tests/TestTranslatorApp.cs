@@ -24,4 +24,15 @@ public class ATranslatorApp
         output.Should().Contain("*-* voiture *-*");
 
     }
+    
+    [Test]
+    public void when_run_with_a_spanish_translator_returns_its_translator_and_the_correct_translation_for_car()
+    {
+        var app = new TranslatorApp(new SpanishTranslator(), "car");
+        var output = app.Run();
+        output.Should().Contain("SpanishTranslator");
+        output.Should().Contain("SpanishTranslator");
+        output.Should().Contain("*-* coche *-*");
+    
+    }
 }

@@ -52,4 +52,7 @@ public class FrenchTranslator : Translator
     protected override Dictionary<string, string> Translations { get; } = new() { { "car", "voiture" } };
 }
 
+public class SpanishTranslator : Translator
+{
+    protected override Dictionary<string, string> Translations { get; } = new(){{"car", "coche"}};
 }
