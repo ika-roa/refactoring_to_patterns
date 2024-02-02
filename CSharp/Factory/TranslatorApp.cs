@@ -2,12 +2,19 @@
 
 public class TranslatorApp
 {
-    private readonly Translator _translator;
     private readonly string _message;
+    private readonly Translator _translator;
 
-    public TranslatorApp(Translator translator, string message)
+    public TranslatorApp(string language, string message)
     {
-        _translator = translator;
+        if (language == "french")
+        {
+            _translator = new FrenchTranslator();
+        }
+        else
+        {
+            _translator = new SpanishTranslator();
+        }
         _message = message;
     }
     public string Run()
@@ -37,7 +44,7 @@ internal class AppModule
     }
 }
 
-public class Translator
+internal class Translator
 {
     protected virtual Dictionary<string, string> Translations { get; } = new();
 
@@ -47,12 +54,12 @@ public class Translator
     }
 }
 
-public class FrenchTranslator : Translator
+internal class FrenchTranslator : Translator
 {
     protected override Dictionary<string, string> Translations { get; } = new() { { "car", "voiture" } };
 }
 
-public class SpanishTranslator : Translator
+internal class SpanishTranslator : Translator
 {
     protected override Dictionary<string, string> Translations { get; } = new(){{"car", "coche"}};
 }
