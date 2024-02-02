@@ -20,7 +20,6 @@ public class ATranslatorApp
         var app = new TranslatorApp("spanish", "car");
         var output = app.Run();
         output.Should().Contain("SpanishTranslator");
-        output.Should().Contain("SpanishTranslator");
         output.Should().Contain("*-* coche *-*");
     
     }
