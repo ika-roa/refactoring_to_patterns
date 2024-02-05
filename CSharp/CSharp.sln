@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainConstructors", "ChainC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainConstructors.Tests", "ChainConstructors.Tests\ChainConstructors.Tests.csproj", "{1FFB5D83-9180-4123-BA8A-FB6A00D8E96F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{C5D09B20-7060-4B9B-BEC4-0A0231AAD003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory.Tests", "Factory.Tests\Factory.Tests.csproj", "{688E46CA-278B-477F-879D-78E005E5754A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{1FFB5D83-9180-4123-BA8A-FB6A00D8E96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FFB5D83-9180-4123-BA8A-FB6A00D8E96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FFB5D83-9180-4123-BA8A-FB6A00D8E96F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D09B20-7060-4B9B-BEC4-0A0231AAD003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D09B20-7060-4B9B-BEC4-0A0231AAD003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D09B20-7060-4B9B-BEC4-0A0231AAD003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D09B20-7060-4B9B-BEC4-0A0231AAD003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{688E46CA-278B-477F-879D-78E005E5754A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{688E46CA-278B-477F-879D-78E005E5754A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{688E46CA-278B-477F-879D-78E005E5754A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{688E46CA-278B-477F-879D-78E005E5754A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
