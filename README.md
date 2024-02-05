@@ -30,3 +30,6 @@ The example works nearly as described in the book, only the last small step (inl
 ### Chain Constructors
 Different constructors of a class are refactored so that they all call a common catch-all constructor in order to reduce duplication. 
 This refactoring might be used as a preliminary step to "Replace Constructors with Creation Methods".
+
+### Factory pattern
+Basic implementation of a factory design pattern.
