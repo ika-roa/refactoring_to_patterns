@@ -33,4 +33,14 @@ public class ATranslatorApp
         output.Should().Contain("*-* bil *-*");
     
     }
+    
+    [Test]
+    public void when_run_with_an_english_translator_returns_its_translator_and_the_original_string()
+    {
+        var app = new TranslatorApp("english", "car");
+        var output = app.Run();
+        output.Should().Contain("EnglishTranslator");
+        output.Should().Contain("*-* car *-*");
+    
+    }
 }

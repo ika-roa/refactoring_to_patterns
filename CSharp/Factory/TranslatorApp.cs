@@ -44,7 +44,8 @@ internal class TranslatorFactory
     {
         { "french", new FrenchTranslator() },
         { "spanish", new SpanishTranslator() },
-        { "swedish", new SwedishTranslator() }
+        { "swedish", new SwedishTranslator() },
+        { "english", new EnglishTranslator() }
     };
     public Translator Create(string language)
     {
@@ -56,7 +57,7 @@ internal class Translator
 {
     protected virtual Dictionary<string, string> Translations { get; } = new();
 
-    public string Translate(string message)
+    public virtual string Translate(string message)
     {
         return Translations.GetValueOrDefault(message, "No entry found!");
     }
@@ -75,4 +76,12 @@ internal class SpanishTranslator : Translator
 internal class SwedishTranslator : Translator
 {
     protected override Dictionary<string, string> Translations { get; } = new(){{"car", "bil"}};
+}
+
+internal class EnglishTranslator : Translator
+{
+    public override string Translate(string message)
+    {
+        return message;
+    }
 }
