@@ -7,22 +7,8 @@ public class TranslatorApp
 
     public TranslatorApp(string language, string message)
     {
-        if (language == "french")
-        {
-            _translator = new FrenchTranslator();
-        }
-        else if (language == "spanish")
-        {
-            _translator = new SpanishTranslator();
-        }
-        else if (language == "swedish")
-        {
-            _translator = new SwedishTranslator();
-        }
-        else
-        {
-            _translator = new Translator();
-        }
+        _translator = new TranslatorFactory().Create(language);
+        
         _message = message;
     }
     public string Run()
@@ -49,6 +35,20 @@ internal class AppModule
     {
         var result = _translator.Translate(message);
         return $"*-* {result} *-*";
+    }
+}
+
+internal class TranslatorFactory
+{
+    private readonly Dictionary<string, Translator> _translators = new()
+    {
+        { "french", new FrenchTranslator() },
+        { "spanish", new SpanishTranslator() },
+        { "swedish", new SwedishTranslator() }
+    };
+    public Translator Create(string language)
+    {
+        return _translators[language];
     }
 }
 
