@@ -11,7 +11,7 @@ public class Fruit
         Price = price;
     }
 
-    public static Apple CreateApple()
+    public static Fruit CreateApple()
     {
         return new Apple();
     }
