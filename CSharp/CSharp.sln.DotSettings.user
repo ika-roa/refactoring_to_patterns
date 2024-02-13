@@ -1,7 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=356f8af5_002D7c56_002D43ed_002D9cea_002Decd306308676/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;Factory.Tests&amp;gt; #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\Mak\_Development\Workshop\refactoring_to_patterns\CSharp\Factory.Tests" Presentation="&amp;lt;Factory.Tests&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=47ea2050_002Dcdd2_002D4e67_002Da0e3_002Dbec0171a9423/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;Factory.Tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\Mak\_Development\Workshop\refactoring_to_patterns\CSharp\Factory.Tests" Presentation="&amp;lt;Factory.Tests&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
