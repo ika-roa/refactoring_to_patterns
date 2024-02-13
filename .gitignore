@@ -2,8 +2,11 @@
 
 # Python
 Python/.venv/
+Python/__pycache__/
+Python/test/__pycache__/
 
 # C#
 CSharp/*/bin/
 CSharp/*/obj/
 CSharp/.idea/*
+CSharp/CSharp.sln.DotSettings.user
