@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory.Tests", "Factory.Tests\Factory.Tests.csproj", "{688E46CA-278B-477F-879D-78E005E5754A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncapsulateClassesWithFactory", "EncapsulateClassesWithFactory\EncapsulateClassesWithFactory.csproj", "{75D5D204-943C-4375-AA4C-A60B8EA3A47D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncapsulateClassesWithFactory.Tests", "EncapsulateClassesWithFactory.Tests\EncapsulateClassesWithFactory.Tests.csproj", "{13B53058-7C76-472C-B198-AB5A08FD22D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,13 @@ Global
 		{688E46CA-278B-477F-879D-78E005E5754A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{688E46CA-278B-477F-879D-78E005E5754A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{688E46CA-278B-477F-879D-78E005E5754A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D5D204-943C-4375-AA4C-A60B8EA3A47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D5D204-943C-4375-AA4C-A60B8EA3A47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D5D204-943C-4375-AA4C-A60B8EA3A47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D5D204-943C-4375-AA4C-A60B8EA3A47D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13B53058-7C76-472C-B198-AB5A08FD22D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B53058-7C76-472C-B198-AB5A08FD22D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B53058-7C76-472C-B198-AB5A08FD22D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B53058-7C76-472C-B198-AB5A08FD22D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
