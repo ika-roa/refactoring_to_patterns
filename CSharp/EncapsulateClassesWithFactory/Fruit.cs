@@ -17,7 +17,7 @@ public class Fruit
     }
 }
 
-public class Apple : Fruit
+internal class Apple : Fruit
 {
     public Apple() : base("apple", 1){ }
 }
