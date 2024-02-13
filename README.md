@@ -33,3 +33,10 @@ This refactoring might be used as a preliminary step to "Replace Constructors wi
 
 ### Factory pattern
 Basic implementation of a factory design pattern.
+
+### Encapsulate classes with Factory
+This refactoring can be done completely via built-in refactorings with ReSharper. 
+- `Extract method` on the constructor call to produce a public, static creation method
+- `Move to another type` to move the creation method into the base class
+- `Use base type where possible` to make clients interact with the base class interface only
+- `To internal` on subclass to restrict direct access
