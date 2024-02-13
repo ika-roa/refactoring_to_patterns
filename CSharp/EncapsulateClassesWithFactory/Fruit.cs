@@ -10,6 +10,11 @@ public class Fruit
         Name = name;
         Price = price;
     }
+
+    public static Apple CreateApple()
+    {
+        return new Apple();
+    }
 }
 
 public class Apple : Fruit
