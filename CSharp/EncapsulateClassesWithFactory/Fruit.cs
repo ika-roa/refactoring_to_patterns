@@ -15,6 +15,11 @@ public class Fruit
     {
         return new Apple();
     }
+
+    public static Banana CreateBanana()
+    {
+        return new Banana();
+    }
 }
 
 internal class Apple : Fruit

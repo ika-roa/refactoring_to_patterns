@@ -9,15 +9,9 @@ public class Tests
     {
         var fruitBasket = new List<Fruit>
         {
-            Fruit.CreateApple(),
-            CreateBanana(),
+            Fruit.CreateApple(), Fruit.CreateBanana(),
         };
         fruitBasket[0].Name.Should().Be("apple");
         fruitBasket[1].Price.Should().Be(2);
-    }
-
-    public static Banana CreateBanana()
-    {
-        return new Banana();
     }
 }
