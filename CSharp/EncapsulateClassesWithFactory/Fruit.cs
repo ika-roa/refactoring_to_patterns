@@ -27,7 +27,7 @@ internal class Apple : Fruit
     public Apple() : base("apple", 1){ }
 }
 
-public class Banana : Fruit
+internal class Banana : Fruit
 {
     public Banana() : base("banana", 2){ }
 }
