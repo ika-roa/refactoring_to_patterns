@@ -16,7 +16,7 @@ public class Fruit
         return new Apple();
     }
 
-    public static Banana CreateBanana()
+    public static Fruit CreateBanana()
     {
         return new Banana();
     }
