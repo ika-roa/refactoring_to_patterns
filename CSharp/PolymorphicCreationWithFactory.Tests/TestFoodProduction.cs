@@ -11,4 +11,14 @@ public class Tests
         var field = new Field(location);
         field.GrowFood(fruit);
     }
+    
+    [Test]
+    public void A_garden_produces_food()
+    {
+        var fruit = new Product("Salad");
+        var location = new Location("Stuttgart");
+
+        var garden = new Garden(location);
+        garden.GrowFood(fruit);
+    }
 }
