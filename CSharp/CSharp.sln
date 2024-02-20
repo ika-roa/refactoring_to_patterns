@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncapsulateClassesWithFacto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncapsulateClassesWithFactory.Tests", "EncapsulateClassesWithFactory.Tests\EncapsulateClassesWithFactory.Tests.csproj", "{13B53058-7C76-472C-B198-AB5A08FD22D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicCreationWithFactory.Tests", "PolymorphicCreationWithFactory.Tests\PolymorphicCreationWithFactory.Tests.csproj", "{A3096FFC-1316-4F62-91A6-8BD0A1089E73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicCreationWithFactory", "PolymorphicCreationWithFactory\PolymorphicCreationWithFactory.csproj", "{8563314B-8AD8-4AE1-BE50-322C554A123F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +58,13 @@ Global
 		{13B53058-7C76-472C-B198-AB5A08FD22D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13B53058-7C76-472C-B198-AB5A08FD22D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13B53058-7C76-472C-B198-AB5A08FD22D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3096FFC-1316-4F62-91A6-8BD0A1089E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3096FFC-1316-4F62-91A6-8BD0A1089E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3096FFC-1316-4F62-91A6-8BD0A1089E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3096FFC-1316-4F62-91A6-8BD0A1089E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8563314B-8AD8-4AE1-BE50-322C554A123F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8563314B-8AD8-4AE1-BE50-322C554A123F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8563314B-8AD8-4AE1-BE50-322C554A123F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8563314B-8AD8-4AE1-BE50-322C554A123F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
