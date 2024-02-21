@@ -1,6 +1,6 @@
 ﻿namespace PolymorphicCreationWithFactory;
 
-public record Gardener
+public record Gardener : IProducer
 {
     private readonly string _name;
 
