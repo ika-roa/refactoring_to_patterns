@@ -1,6 +1,6 @@
 ﻿namespace PolymorphicCreationWithFactory;
 
-public abstract class FarmLand
+public abstract class FarmLand : IFarmLand
 {
     protected Location _location;
     public abstract IProducer createProducer();

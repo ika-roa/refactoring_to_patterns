@@ -1,6 +1,6 @@
 ﻿namespace PolymorphicCreationWithFactory;
 
-public class Garden : FarmLand, IFarmLand
+public class Garden : FarmLand
 {
     private readonly Gardener[] _gardeners = { new("Delilah"), new("Emily"), new("Fiona") };
 
