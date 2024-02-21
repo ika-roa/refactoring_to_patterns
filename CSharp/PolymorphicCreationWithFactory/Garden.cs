@@ -4,10 +4,7 @@ public class Garden : FarmLand
 {
     private readonly Gardener[] _gardeners = { new("Delilah"), new("Emily"), new("Fiona") };
 
-    public Garden(Location location)
-    {
-        _location = location;
-    }
+    public Garden(Location location) => _location = location;
 
     public override IProducer createProducer()
     {

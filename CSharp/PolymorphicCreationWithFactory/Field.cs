@@ -4,10 +4,7 @@ public class Field : FarmLand
 {
     private readonly Farmer[] _farmers = { new("Adam"), new("Bob"), new("Charlie") };
 
-    public Field(Location location)
-    {
-        _location = location;
-    }
+    public Field(Location location) => _location = location;
 
     public override IProducer createProducer()
     {
