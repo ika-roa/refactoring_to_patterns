@@ -1,6 +1,11 @@
 ﻿namespace PolymorphicCreationWithFactory;
 
-public class Field : IFarmLand
+public abstract class FarmLand
+{
+    public abstract IProducer createProducer();
+}
+
+public class Field : FarmLand, IFarmLand
 {
     private readonly Location _location;
     private readonly Farmer[] _farmers = { new("Adam"), new("Bob"), new("Charlie") };
@@ -19,7 +24,7 @@ public class Field : IFarmLand
         farmer.Send(product);
     }
 
-    public IProducer createProducer()
+    public override IProducer createProducer()
     {
         var randomIndex = new Random().Next(_farmers.Length);
         var farmer = _farmers[randomIndex];
