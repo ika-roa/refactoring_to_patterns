@@ -1,6 +1,6 @@
 ﻿namespace PolymorphicCreationWithFactory;
 
-public class Field
+public class Field : IFarmLand
 {
     private readonly Location _location;
     private readonly Farmer[] _farmers = { new("Adam"), new("Bob"), new("Charlie") };

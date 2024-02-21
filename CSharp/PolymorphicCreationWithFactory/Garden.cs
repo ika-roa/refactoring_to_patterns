@@ -1,6 +1,6 @@
 ﻿namespace PolymorphicCreationWithFactory;
 
-public class Garden
+public class Garden : IFarmLand
 {
     private readonly Location _location;
     private readonly Gardener[] _gardeners = { new("Delilah"), new("Emily"), new("Fiona") };
