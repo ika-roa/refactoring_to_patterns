@@ -36,7 +36,14 @@ Basic implementation of a factory design pattern.
 
 ### Encapsulate classes with Factory
 This refactoring can be done completely via built-in refactorings with ReSharper. 
-- `Extract method` on the constructor call to produce a public, static creation method
-- `Move to another type` to move the creation method into the base class
-- `Use base type where possible` to make clients interact with the base class interface only
-- `To internal` on subclass to restrict direct access
+1. `Extract method` on the constructor call to produce a public, static creation method
+1. `Move to another type` to move the creation method into the base class
+1. `Use base type where possible` to make clients interact with the base class interface only
+1. `To internal` on subclass to restrict direct access
+
+### Polymorphic creation with Factory Method
+This refactoring reduces duplication by combining classes that differ only in their object creation step. Another advantage is that it becomes clearer where the object creation occurs and how it may be
+overridden. Steps:
+1. Extract creation methods on classes with similar logic, but different creation. Use generic name for those creation methods, and use the same generic return type for both. If there is no common return type, extract an interface.
+1. Pull up the creation method as abstract method to a base class in order to create a factory. The base class is now a *Creator* and the subclasses are *ConcreteCreators*.
+1. Move all duplicated behavior to the base class, and leave only the differences in the subclasses.
