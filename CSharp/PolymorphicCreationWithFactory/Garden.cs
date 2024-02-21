@@ -2,21 +2,11 @@
 
 public class Garden : FarmLand, IFarmLand
 {
-    private readonly Location _location;
     private readonly Gardener[] _gardeners = { new("Delilah"), new("Emily"), new("Fiona") };
 
     public Garden(Location location)
     {
         _location = location;
-    }
-    
-    public void GrowFood(Product product)
-    {
-        var gardener = createProducer();
-
-        gardener.CreateFoodSourceIn(_location);
-        gardener.Harvest(product);
-        gardener.Send(product);
     }
 
     public override IProducer createProducer()
