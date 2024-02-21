@@ -12,11 +12,17 @@ public class Field
 
     public void GrowFood(Product product)
     {
-        var randomIndex = new Random().Next(_farmers.Length);
-        var farmer = _farmers[randomIndex];
-        
+        var farmer = createProducer();
+
         farmer.CreateFoodSourceIn(_location);
         farmer.Harvest(product);
         farmer.Send(product);
+    }
+
+    public Farmer createProducer()
+    {
+        var randomIndex = new Random().Next(_farmers.Length);
+        var farmer = _farmers[randomIndex];
+        return farmer;
     }
 }

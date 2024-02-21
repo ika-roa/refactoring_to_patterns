@@ -12,11 +12,17 @@ public class Garden
     
     public void GrowFood(Product product)
     {
-        var randomIndex = new Random().Next(_gardeners.Length);
-        var gardener = _gardeners[randomIndex];
-        
+        var gardener = createProducer();
+
         gardener.CreateFoodSourceIn(_location);
         gardener.Harvest(product);
         gardener.Send(product);
+    }
+
+    public Gardener createProducer()
+    {
+        var randomIndex = new Random().Next(_gardeners.Length);
+        var gardener = _gardeners[randomIndex];
+        return gardener;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PolymorphicCreationWithFactory;
 
-internal record Farmer
+public record Farmer
 {
     private readonly string _name;
 
