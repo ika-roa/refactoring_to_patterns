@@ -19,7 +19,7 @@ public class Garden
         gardener.Send(product);
     }
 
-    public Gardener createProducer()
+    public IProducer createProducer()
     {
         var randomIndex = new Random().Next(_gardeners.Length);
         var gardener = _gardeners[randomIndex];

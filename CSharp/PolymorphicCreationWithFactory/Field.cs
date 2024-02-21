@@ -19,7 +19,7 @@ public class Field
         farmer.Send(product);
     }
 
-    public Farmer createProducer()
+    public IProducer createProducer()
     {
         var randomIndex = new Random().Next(_farmers.Length);
         var farmer = _farmers[randomIndex];
