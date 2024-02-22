@@ -55,17 +55,17 @@ class FarmLand:
     def create_producer(self):
         pass
 
+    def grow_food(self, product):
+        producer = self.create_producer()
+        producer.create_food_source_in(self._location)
+        producer.harvest(product)
+        producer.send(product)
+
 
 class Field(FarmLand):
     def __init__(self, location):
         super().__init__(location)
         self._farmers = [Farmer("Anna"), Farmer("Bea"), Farmer("Chloe")]
-
-    def grow_food(self, product):
-        farmer = self.create_producer()
-        farmer.create_food_source_in(self._location)
-        farmer.harvest(product)
-        farmer.send(product)
 
     def create_producer(self):
         return random.choice(self._farmers)
@@ -75,12 +75,6 @@ class Garden(FarmLand):
     def __init__(self, location):
         super().__init__(location)
         self._gardeners = [Gardener("Dan"), Gardener("Eddie"), Gardener("Finn")]
-
-    def grow_food(self, product):
-        gardener = self.create_producer()
-        gardener.create_food_source_in(self._location)
-        gardener.harvest(product)
-        gardener.send(product)
 
     def create_producer(self):
         return random.choice(self._gardeners)
