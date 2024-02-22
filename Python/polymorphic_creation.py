@@ -1,4 +1,22 @@
 import random
+from abc import ABC, abstractmethod
+
+
+class Producer(ABC):
+    def __init__(self, name):
+        self._name = name
+
+    @abstractmethod
+    def create_food_source_in(self, location):
+        pass
+
+    @abstractmethod
+    def harvest(self, product):
+        pass
+
+    @abstractmethod
+    def send(self, product):
+        pass
 
 
 class Field:
@@ -16,9 +34,9 @@ class Field:
         return random.choice(self._farmers)
 
 
-class Farmer:
+class Farmer(Producer):
     def __init__(self, name):
-        self._name = name
+        super().__init__(name)
 
     def create_food_source_in(self, location):
         print(f"{self._name} plants a field in {location}.")
@@ -45,9 +63,9 @@ class Garden:
         return random.choice(self._gardeners)
 
 
-class Gardener:
+class Gardener(Producer):
     def __init__(self, name):
-        self._name = name
+        super().__init__(name)
 
     def create_food_source_in(self, location):
         print(f"{self._name} plants a garden in {location}.")
