@@ -13,6 +13,18 @@ class Field:
         farmer.send(product)
 
 
+class Garden:
+    def __init__(self, location):
+        self._location = location
+        self._gardeners = [Gardener("Dan"), Gardener("Eddie"), Gardener("Finn")]
+
+    def grow_food(self, product):
+        gardener = random.choice(self._gardeners)
+        gardener.create_food_source_in(self._location)
+        gardener.harvest(product)
+        gardener.send(product)
+
+
 class Farmer:
     def __init__(self, name):
         self._name = name
@@ -25,3 +37,17 @@ class Farmer:
 
     def send(self, product):
         print(f"{self._name} sends {product} to the factory.")
+
+
+class Gardener:
+    def __init__(self, name):
+        self._name = name
+
+    def create_food_source_in(self, location):
+        print(f"{self._name} plants a garden in {location}.")
+
+    def harvest(self, product):
+        print(f"{self._name} harvests {product} from garden.")
+
+    def send(self, product):
+        print(f"{self._name} sends {product} to the market.")
