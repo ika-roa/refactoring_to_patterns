@@ -7,22 +7,22 @@ public class Yieldstrategy
 
 public class FarmLand
 {
-    private Type _type = Type.Garden;
+    private TypeOfLand _typeOfLand = TypeOfLand.Garden;
 
     public string Describe()
     {
-        if (_type == Type.Field)
+        if (_typeOfLand == TypeOfLand.Field)
             return "Field";
-        if (_type == Type.Garden)
+        if (_typeOfLand == TypeOfLand.Garden)
             return "Garden";
-        if (_type == Type.Orchard)
+        if (_typeOfLand == TypeOfLand.Orchard)
             return "Orchard";
         return "";
     }
 
-    public void SetType(Type type)
+    public void SetType(TypeOfLand typeOfLand)
     {
-        _type = type;
+        _typeOfLand = typeOfLand;
     }
 
     public double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
@@ -30,7 +30,7 @@ public class FarmLand
         const double baseYield = 2;
         double yield = 0;
 
-        if (_type == Type.Field)
+        if (_typeOfLand == TypeOfLand.Field)
         {
             if (amountOfRain > 10)
             {
@@ -46,7 +46,7 @@ public class FarmLand
             }
         }
 
-        if (_type == Type.Garden)
+        if (_typeOfLand == TypeOfLand.Garden)
         {
             if (numberOfWorkers > 5)
             {
@@ -58,7 +58,7 @@ public class FarmLand
             }
         }
 
-        if (_type == Type.Orchard)
+        if (_typeOfLand == TypeOfLand.Orchard)
         {
             if (numberOfWorkers > 2)
             {
@@ -79,11 +79,4 @@ public class FarmLand
 
         return yield;
     }
-}
-
-public enum Type
-{
-    Field,
-    Garden,
-    Orchard
 }
