@@ -1,5 +1,10 @@
 ﻿namespace ReplaceConditionalLogicWithStrategy;
 
+public class Yieldstrategy
+{
+    
+}
+
 public class FarmLand
 {
     private Type _type = Type.Garden;
