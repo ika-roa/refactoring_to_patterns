@@ -1,8 +1,14 @@
 ﻿namespace ReplaceConditionalLogicWithStrategy;
 
-public class YieldStrategy
+public abstract class YieldStrategyBase
 {
-    public string Describe(TypeOfLand typeOfLand)
+    public abstract string Describe(TypeOfLand typeOfLand);
+    public abstract double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0);
+}
+
+public class YieldStrategy : YieldStrategyBase
+{
+    public override string Describe(TypeOfLand typeOfLand)
     {
         if (typeOfLand == TypeOfLand.Field)
             return "Field";
@@ -13,7 +19,7 @@ public class YieldStrategy
         return "";
     }
     
-    public double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
+    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
     {
         const double baseYield = 2;
         double yield = 0;
