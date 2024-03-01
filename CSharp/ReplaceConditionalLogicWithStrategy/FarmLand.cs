@@ -1,6 +1,6 @@
 ﻿namespace ReplaceConditionalLogicWithStrategy;
 
-public class Yieldstrategy
+public class YieldStrategy
 {
     public string Describe(TypeOfLand typeOfLand)
     {
@@ -72,18 +72,18 @@ public class Yieldstrategy
 public class FarmLand
 {
     private TypeOfLand _typeOfLand = TypeOfLand.Garden;
-    private Yieldstrategy _yieldstrategy = new Yieldstrategy();
+    private YieldStrategy _yieldStrategy = new YieldStrategy();
 
-    public string Describe() => _yieldstrategy.Describe(_typeOfLand);
+    public string Describe() => _yieldStrategy.Describe(_typeOfLand);
 
     public void SetType(TypeOfLand typeOfLand)
     {
         _typeOfLand = typeOfLand;
-        _yieldstrategy = new Yieldstrategy();
+        _yieldStrategy = new YieldStrategy();
     }
 
     public double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
     {
-        return _yieldstrategy.CalculateYield(_typeOfLand, numberOfWorkers, amountOfRain);
+        return _yieldStrategy.CalculateYield(_typeOfLand, numberOfWorkers, amountOfRain);
     }
 }
