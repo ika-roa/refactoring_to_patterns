@@ -2,23 +2,24 @@
 
 public class Yieldstrategy
 {
-    
+    public string Describe(TypeOfLand typeOfLand)
+    {
+        if (typeOfLand == TypeOfLand.Field)
+            return "Field";
+        if (typeOfLand == TypeOfLand.Garden)
+            return "Garden";
+        if (typeOfLand == TypeOfLand.Orchard)
+            return "Orchard";
+        return "";
+    }
 }
 
 public class FarmLand
 {
     private TypeOfLand _typeOfLand = TypeOfLand.Garden;
+    private Yieldstrategy _yieldstrategy = new Yieldstrategy();
 
-    public string Describe()
-    {
-        if (_typeOfLand == TypeOfLand.Field)
-            return "Field";
-        if (_typeOfLand == TypeOfLand.Garden)
-            return "Garden";
-        if (_typeOfLand == TypeOfLand.Orchard)
-            return "Orchard";
-        return "";
-    }
+    public string Describe() => _yieldstrategy.Describe(_typeOfLand);
 
     public void SetType(TypeOfLand typeOfLand)
     {
