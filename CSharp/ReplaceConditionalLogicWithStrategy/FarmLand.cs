@@ -79,6 +79,7 @@ public class FarmLand
     public void SetType(TypeOfLand typeOfLand)
     {
         _typeOfLand = typeOfLand;
+        _yieldstrategy = new Yieldstrategy();
     }
 
     public double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
