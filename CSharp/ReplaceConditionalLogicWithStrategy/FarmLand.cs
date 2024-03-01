@@ -12,26 +12,13 @@ public class Yieldstrategy
             return "Orchard";
         return "";
     }
-}
-
-public class FarmLand
-{
-    private TypeOfLand _typeOfLand = TypeOfLand.Garden;
-    private Yieldstrategy _yieldstrategy = new Yieldstrategy();
-
-    public string Describe() => _yieldstrategy.Describe(_typeOfLand);
-
-    public void SetType(TypeOfLand typeOfLand)
-    {
-        _typeOfLand = typeOfLand;
-    }
-
-    public double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
+    
+    public double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
     {
         const double baseYield = 2;
         double yield = 0;
 
-        if (_typeOfLand == TypeOfLand.Field)
+        if (typeOfLand == TypeOfLand.Field)
         {
             if (amountOfRain > 10)
             {
@@ -47,7 +34,7 @@ public class FarmLand
             }
         }
 
-        if (_typeOfLand == TypeOfLand.Garden)
+        if (typeOfLand == TypeOfLand.Garden)
         {
             if (numberOfWorkers > 5)
             {
@@ -59,7 +46,7 @@ public class FarmLand
             }
         }
 
-        if (_typeOfLand == TypeOfLand.Orchard)
+        if (typeOfLand == TypeOfLand.Orchard)
         {
             if (numberOfWorkers > 2)
             {
@@ -79,5 +66,23 @@ public class FarmLand
         }
 
         return yield;
+    }
+}
+
+public class FarmLand
+{
+    private TypeOfLand _typeOfLand = TypeOfLand.Garden;
+    private Yieldstrategy _yieldstrategy = new Yieldstrategy();
+
+    public string Describe() => _yieldstrategy.Describe(_typeOfLand);
+
+    public void SetType(TypeOfLand typeOfLand)
+    {
+        _typeOfLand = typeOfLand;
+    }
+
+    public double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
+    {
+        return _yieldstrategy.CalculateYield(_typeOfLand, numberOfWorkers, amountOfRain);
     }
 }
