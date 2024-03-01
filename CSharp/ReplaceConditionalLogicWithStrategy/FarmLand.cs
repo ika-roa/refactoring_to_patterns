@@ -1,12 +1,12 @@
 ﻿namespace ReplaceConditionalLogicWithStrategy;
 
-public abstract class YieldStrategyBase
+internal abstract class YieldStrategyBase
 {
     public abstract string Describe(TypeOfLand typeOfLand);
     public abstract double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0);
 }
 
-public class YieldStrategy : YieldStrategyBase
+internal class YieldStrategy : YieldStrategyBase
 {
     public override string Describe(TypeOfLand typeOfLand)
     {
