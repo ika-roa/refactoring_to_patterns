@@ -36,10 +36,18 @@ overridden. Steps:
 ### Replace Conditional logic with strategy
 This refactoring simplifies a class by moving complicated conditional logic to specialized subclasses. It thus makes clearer what the task of the original class is, and makes it possible to exchange one kind of algorithm with another. However, it might be complicated to bring all necessary data into the subclasses. Steps:
 1. Create a general strategy class, named after the behavior performed by the calculation method.
-2. Move the calculation method to the strategy class, with all conditional logic. The original class retains a delegate, a field that contains a reference to the strategy, and that will perform the claculation from now on.
-3. Make the necessary data available to the strategy by (1) passing the context as a parameter to the strategy's constructor or (2) passing individual arguments to the strategy.
-4. Split up the strategy base class into specialized subclasses, tearing down the complicated conditional logic in the process.
-5. Make the original class select which strategy to use in which case.
+1. Move the calculation method to the strategy class, with all conditional logic. The original class retains a delegate, a field that contains a reference to the strategy, and that will perform the claculation from now on.
+1. Make the necessary data available to the strategy by (1) passing the context as a parameter to the strategy's constructor or (2) passing individual arguments to the strategy.
+1. Split up the strategy base class into specialized subclasses, tearing down the complicated conditional logic in the process.
+1. Make the original class select which strategy to use in which case.
+
+### Form template method
+This refactoring reduces duplicated code in related subclasses, by combining similar, but not identical methods into a common template method. If the two methods contain roughly the same steps in the same order, but the steps are not the same, the sequence can be moved to the super class in the form of concrete methods, abstract methods (that must be overriden) or hook methods (that can optionally be overridden). The advantage of this pattern is that general and individual behavior gets clearly separated, and the steps of a general algorithm are clearly communicated. However, its usefulness decreases the bigger the differences between the methods are. Steps:
+1. Identify the similar methods and split them up by extracting shorter methods. The aim here is to make the bodies of the two methods the same by combining general and unique methods. This step depends a lot on domain knowledge.
+1. Pull up the now identical methods into the super class.
+1. Clean up by pulling identical helper methods up into the super class.
+1. For similar, but not identical methods, make the method signature the same and pull them up as abstract method.
+1. If a method has one default behavior, which deviates in only one subclass, a hook method can be used. This hook method has a default behavior, but can be overridden. 
 
 
 ## Refactorings in Python
