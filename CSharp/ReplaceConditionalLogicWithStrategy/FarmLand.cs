@@ -2,16 +2,16 @@
 
 internal abstract class YieldStrategyBase
 {
-    public abstract string Describe(TypeOfLand typeOfLand);
-    public abstract double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0);
+    public abstract string Describe();
+    public abstract double CalculateYield(int numberOfWorkers, int amountOfRain = 0);
 }
 
 
 internal class FieldStrategy : YieldStrategyBase
 {
-    public override string Describe(TypeOfLand typeOfLand) => "Field";
+    public override string Describe() => "Field";
     
-    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
+    public override double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
     {
         const double baseYield = 2;
         
@@ -25,9 +25,9 @@ internal class FieldStrategy : YieldStrategyBase
 
 internal class GardenStrategy : YieldStrategyBase
 {
-    public override string Describe(TypeOfLand typeOfLand) => "Garden";
+    public override string Describe() => "Garden";
 
-    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
+    public override double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
     {
         const double baseYield = 2;
         
@@ -39,9 +39,9 @@ internal class GardenStrategy : YieldStrategyBase
 
 internal class OrchardStrategy : YieldStrategyBase
 {
-    public override string Describe(TypeOfLand typeOfLand) => "Orchard";
+    public override string Describe() => "Orchard";
 
-    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
+    public override double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
     {
         const double baseYield = 2;
 
@@ -57,9 +57,9 @@ internal class OrchardStrategy : YieldStrategyBase
 
 internal class YieldStrategy : YieldStrategyBase
 {
-    public override string Describe(TypeOfLand typeOfLand) => "";
+    public override string Describe() => "";
 
-    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0) => 0;
+    public override double CalculateYield(int numberOfWorkers, int amountOfRain = 0) => 0;
 }
 
 
@@ -68,7 +68,7 @@ public class FarmLand
     private TypeOfLand _typeOfLand = TypeOfLand.Garden;
     private YieldStrategyBase _yieldStrategy = new GardenStrategy();
 
-    public string Describe() => _yieldStrategy.Describe(_typeOfLand);
+    public string Describe() => _yieldStrategy.Describe();
 
     public void SetType(TypeOfLand typeOfLand)
     {
@@ -93,6 +93,6 @@ public class FarmLand
 
     public double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
     {
-        return _yieldStrategy.CalculateYield(_typeOfLand, numberOfWorkers, amountOfRain);
+        return _yieldStrategy.CalculateYield(numberOfWorkers, amountOfRain);
     }
 }
