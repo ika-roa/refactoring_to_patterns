@@ -14,25 +14,12 @@ internal class FieldStrategy : YieldStrategy
     public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
     {
         const double baseYield = 2;
-        double yield = 0;
-
-        if (typeOfLand == TypeOfLand.Field)
-        {
-            if (amountOfRain > 10)
-            {
-                yield = baseYield * 2;
-            }
-            else if (amountOfRain > 5)
-            {
-                yield = baseYield;
-            }
-            else
-            {
-                yield = baseYield / 2;
-            }
-        }
-
-        return yield;
+        
+        if (amountOfRain > 10)
+            return baseYield * 2;
+        if (amountOfRain > 5)
+            return baseYield;
+        return baseYield / 2;
     }
 }
 
@@ -43,18 +30,10 @@ internal class GardenStrategy : YieldStrategyBase
     public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
     {
         const double baseYield = 2;
-        double yield = 0;
         
         if (numberOfWorkers > 5)
-        {
-            yield = baseYield * 10;
-        }
-        else
-        {
-            yield = baseYield / 10;
-        }
-
-        return yield;
+            return baseYield * 10;
+        return baseYield / 10;
     }
 }
 
