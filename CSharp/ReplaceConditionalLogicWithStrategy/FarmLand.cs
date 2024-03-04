@@ -6,6 +6,36 @@ internal abstract class YieldStrategyBase
     public abstract double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0);
 }
 
+
+internal class FieldStrategy : YieldStrategy
+{
+    public override string Describe(TypeOfLand typeOfLand) => "Field";
+    
+    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
+    {
+        const double baseYield = 2;
+        double yield = 0;
+
+        if (typeOfLand == TypeOfLand.Field)
+        {
+            if (amountOfRain > 10)
+            {
+                yield = baseYield * 2;
+            }
+            else if (amountOfRain > 5)
+            {
+                yield = baseYield;
+            }
+            else
+            {
+                yield = baseYield / 2;
+            }
+        }
+
+        return yield;
+    }
+}
+
 internal class YieldStrategy : YieldStrategyBase
 {
     public override string Describe(TypeOfLand typeOfLand)
@@ -85,7 +115,14 @@ public class FarmLand
     public void SetType(TypeOfLand typeOfLand)
     {
         _typeOfLand = typeOfLand;
-        _yieldStrategy = new YieldStrategy();
+        if (typeOfLand == TypeOfLand.Field)
+        {
+            _yieldStrategy = new FieldStrategy();
+        }
+        else
+        {
+            _yieldStrategy = new YieldStrategy();
+        }
     }
 
     public double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
