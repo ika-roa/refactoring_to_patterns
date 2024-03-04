@@ -40,8 +40,6 @@ internal class YieldStrategy : YieldStrategyBase
 {
     public override string Describe(TypeOfLand typeOfLand)
     {
-        if (typeOfLand == TypeOfLand.Field)
-            return "Field";
         if (typeOfLand == TypeOfLand.Garden)
             return "Garden";
         if (typeOfLand == TypeOfLand.Orchard)
@@ -53,22 +51,6 @@ internal class YieldStrategy : YieldStrategyBase
     {
         const double baseYield = 2;
         double yield = 0;
-
-        if (typeOfLand == TypeOfLand.Field)
-        {
-            if (amountOfRain > 10)
-            {
-                yield = baseYield * 2;
-            }
-            else if (amountOfRain > 5)
-            {
-                yield = baseYield;
-            }
-            else
-            {
-                yield = baseYield / 2;
-            }
-        }
 
         if (typeOfLand == TypeOfLand.Garden)
         {
