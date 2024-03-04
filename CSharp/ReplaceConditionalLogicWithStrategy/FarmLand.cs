@@ -36,12 +36,32 @@ internal class FieldStrategy : YieldStrategy
     }
 }
 
+internal class GardenStrategy : YieldStrategyBase
+{
+    public override string Describe(TypeOfLand typeOfLand) => "Garden";
+
+    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
+    {
+        const double baseYield = 2;
+        double yield = 0;
+        
+        if (numberOfWorkers > 5)
+        {
+            yield = baseYield * 10;
+        }
+        else
+        {
+            yield = baseYield / 10;
+        }
+
+        return yield;
+    }
+}
+
 internal class YieldStrategy : YieldStrategyBase
 {
     public override string Describe(TypeOfLand typeOfLand)
     {
-        if (typeOfLand == TypeOfLand.Garden)
-            return "Garden";
         if (typeOfLand == TypeOfLand.Orchard)
             return "Orchard";
         return "";
@@ -51,18 +71,6 @@ internal class YieldStrategy : YieldStrategyBase
     {
         const double baseYield = 2;
         double yield = 0;
-
-        if (typeOfLand == TypeOfLand.Garden)
-        {
-            if (numberOfWorkers > 5)
-            {
-                yield = baseYield * 10;
-            }
-            else
-            {
-                yield = baseYield / 10;
-            }
-        }
 
         if (typeOfLand == TypeOfLand.Orchard)
         {
@@ -87,10 +95,11 @@ internal class YieldStrategy : YieldStrategyBase
     }
 }
 
+
 public class FarmLand
 {
     private TypeOfLand _typeOfLand = TypeOfLand.Garden;
-    private YieldStrategy _yieldStrategy = new YieldStrategy();
+    private YieldStrategyBase _yieldStrategy = new GardenStrategy();
 
     public string Describe() => _yieldStrategy.Describe(_typeOfLand);
 
@@ -100,6 +109,10 @@ public class FarmLand
         if (typeOfLand == TypeOfLand.Field)
         {
             _yieldStrategy = new FieldStrategy();
+        }
+        else if (typeOfLand == TypeOfLand.Garden)
+        {
+            _yieldStrategy = new GardenStrategy();
         }
         else
         {
