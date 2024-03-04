@@ -73,22 +73,13 @@ public class FarmLand
     public void SetType(TypeOfLand typeOfLand)
     {
         _typeOfLand = typeOfLand;
-        if (typeOfLand == TypeOfLand.Field)
+        _yieldStrategy = typeOfLand switch
         {
-            _yieldStrategy = new FieldStrategy();
-        }
-        else if (typeOfLand == TypeOfLand.Garden)
-        {
-            _yieldStrategy = new GardenStrategy();
-        }
-        else if (typeOfLand == TypeOfLand.Orchard)
-        {
-            _yieldStrategy = new OrchardStrategy();
-        }
-        else
-        {
-            _yieldStrategy = new YieldStrategy();
-        }
+            TypeOfLand.Field => new FieldStrategy(),
+            TypeOfLand.Garden => new GardenStrategy(),
+            TypeOfLand.Orchard => new OrchardStrategy(),
+            _ => new YieldStrategy()
+        };
     }
 
     public double CalculateYield(int numberOfWorkers, int amountOfRain = 0)
