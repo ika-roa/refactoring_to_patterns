@@ -7,7 +7,7 @@ internal abstract class YieldStrategyBase
 }
 
 
-internal class FieldStrategy : YieldStrategy
+internal class FieldStrategy : YieldStrategyBase
 {
     public override string Describe(TypeOfLand typeOfLand) => "Field";
     
@@ -57,15 +57,9 @@ internal class OrchardStrategy : YieldStrategyBase
 
 internal class YieldStrategy : YieldStrategyBase
 {
-    public override string Describe(TypeOfLand typeOfLand)
-    {
-        return "";
-    }
-    
-    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0)
-    {
-        return 0;
-    }
+    public override string Describe(TypeOfLand typeOfLand) => "";
+
+    public override double CalculateYield(TypeOfLand typeOfLand, int numberOfWorkers, int amountOfRain = 0) => 0;
 }
 
 
