@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicCreationWithFact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicCreationWithFactory", "PolymorphicCreationWithFactory\PolymorphicCreationWithFactory.csproj", "{8563314B-8AD8-4AE1-BE50-322C554A123F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceConditionalLogicWithStrategy", "ReplaceConditionalLogicWithStrategy\ReplaceConditionalLogicWithStrategy.csproj", "{697D9970-E4F5-41D8-A8F7-F4F59AC36B77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceConditionalLogicWithStrategy.Tests", "ReplaceConditionalLogicWithStrategy.Tests\ReplaceConditionalLogicWithStrategy.Tests.csproj", "{80313D44-6FE4-4DF3-949B-F64F04DC637A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +70,13 @@ Global
 		{8563314B-8AD8-4AE1-BE50-322C554A123F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8563314B-8AD8-4AE1-BE50-322C554A123F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8563314B-8AD8-4AE1-BE50-322C554A123F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{697D9970-E4F5-41D8-A8F7-F4F59AC36B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{697D9970-E4F5-41D8-A8F7-F4F59AC36B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{697D9970-E4F5-41D8-A8F7-F4F59AC36B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{697D9970-E4F5-41D8-A8F7-F4F59AC36B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80313D44-6FE4-4DF3-949B-F64F04DC637A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80313D44-6FE4-4DF3-949B-F64F04DC637A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80313D44-6FE4-4DF3-949B-F64F04DC637A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80313D44-6FE4-4DF3-949B-F64F04DC637A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
